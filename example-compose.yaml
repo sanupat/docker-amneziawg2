@@ -1,0 +1,11 @@
+services:
+  amneziawg:
+    image: name
+    container_name: amneziawg-container
+    privileged: true
+    devices:
+      - /dev/net/tun
+    volumes:
+      - ./awg0.conf:/etc/amnezia/amneziawg/awg0.conf
+    environment:
+      - TZ=Etc/UTC

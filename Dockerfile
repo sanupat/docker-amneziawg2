@@ -18,6 +18,7 @@ COPY --from=builder /go/amneziawg-go/amneziawg-go /usr/bin/amneziawg-go
 COPY --from=builder /go/amneziawg-tools/src/wg /usr/bin/awg
 COPY --from=builder /go/amneziawg-tools/src/wg-quick/linux.bash /usr/bin/awg-quick
 COPY wireguard-fs /
+RUN chmod +x /etc/init.d/wg-quick
 COPY --chmod=755 --chown=root:root ./init.sh /init.sh
 
 RUN  rm -f /usr/sbin/iptables && \

@@ -1,6 +1,7 @@
 services:
   amneziawg:
     image: name
+    build: .
     container_name: amneziawg-container
     privileged: true
     devices:
@@ -9,3 +10,5 @@ services:
       - ./awg0.conf:/etc/amnezia/amneziawg/awg0.conf
     environment:
       - TZ=Etc/UTC
+    #network_mode: "host"
+    #restart: unless-stopped

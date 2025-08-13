@@ -3,7 +3,9 @@ services:
     image: name
     build: .
     container_name: amneziawg-container
-    privileged: true
+    #privileged: true
+    cap_add:
+      - NET_ADMIN
     devices:
       - /dev/net/tun
     volumes:

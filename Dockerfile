@@ -51,7 +51,7 @@ RUN rc-update add wg-quick default
 
 VOLUME ["/sys/fs/cgroup"]
 
-HEALTHCHECK --interval=15m --start-period=20s --timeout=30s --retries=2 CMD /bin/bash /data/healthcheck.sh
+HEALTHCHECK --interval=5m --start-period=20s --timeout=10s --retries=2 CMD /bin/bash /data/healthcheck.sh
 
 ENTRYPOINT ["dumb-init", "/init.sh"]
 CMD [""]
